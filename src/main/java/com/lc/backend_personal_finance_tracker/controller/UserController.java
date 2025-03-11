@@ -12,13 +12,14 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/users")
 @CrossOrigin()
 public class UserController {
 
     @Autowired
     private UserRepo userRepo;
 
-    @PostMapping("/user")
+    @PostMapping("/login")
     User newUser(@RequestBody User user) { return userRepo.save(user);}
 
 //    @PutMapping("/user/{id}")
